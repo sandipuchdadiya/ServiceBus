@@ -12,7 +12,7 @@ namespace ServiceBus
     {
         static void Main1(string[] args)
         {
-            var connectionString = "Endpoint=sb://sb-learning.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=4mDaYzWg+LJsuaIL8coPVc9PTD6iv0O9Xtp90vX0dQo=";
+            var connectionString = "##";
             var queueName = "queuetest";
 
             var client = QueueClient.CreateFromConnectionString(connectionString, queueName);

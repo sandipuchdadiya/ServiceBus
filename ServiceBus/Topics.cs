@@ -8,14 +8,14 @@ using Microsoft.ServiceBus.Messaging;
 
 namespace ServiceBus
 {
-    class Program
+    class Topics
     {
-        static void Main12(string[] args)
+        static void Main(string[] args)
         {
             var connectionString = "##";
-            var queueName = "queuetest";
+            var topicName = "NewTopic";
 
-            var client = QueueClient.CreateFromConnectionString(connectionString, queueName);
+            var client = SubscriptionClient.CreateFromConnectionString(connectionString, topicName, "TopicSubscription");         
 
             client.OnMessage(message =>
             {
@@ -23,7 +23,7 @@ namespace ServiceBus
                 Console.WriteLine(String.Format("Message id: {0}", message.MessageId));
             });
 
-            Console.WriteLine("Press ENTER to exit program");
+            Console.WriteLine("Message successfully sent! Press ENTER to exit program");
             Console.ReadLine();
         }
     }
